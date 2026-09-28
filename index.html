@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Charumathi ♡ Fahd</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+:root{--pink:#e96b86;--ink:#5b3e42;--cream:#fff8f5}
+*{box-sizing:border-box}body{margin:0;background:#eadbd7;color:var(--ink);font-family:"DM Sans",sans-serif}
+.app{min-height:100svh;display:flex;justify-content:center}.phone{width:min(100%,480px);min-height:100svh;background:var(--cream);overflow:hidden}
+.page{min-height:100svh;padding:42px 22px 34px;display:none;position:relative;background:radial-gradient(circle at 8% 12%,#f7b4c2 0 2px,transparent 3px),radial-gradient(circle at 91% 26%,#f7b4c2 0 3px,transparent 4px),linear-gradient(135deg,#fffaf8,#fff2f4)}
+.page.active{display:flex;flex-direction:column;animation:in .55s ease}@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.center{text-align:center;align-items:center;justify-content:center}.tiny{font-size:12px;opacity:.7}.title{font-size:28px;margin:0 0 10px;font-family:"Playfair Display",serif;font-weight:400}
+.sub{max-width:320px;line-height:1.65;font-size:14px}.heart{font-size:48px;margin-bottom:24px}.pin{margin:24px auto 10px;display:grid;grid-template-columns:repeat(3,52px);gap:10px}
+.pin button{border:0;border-radius:50%;width:52px;height:52px;background:#fff8f6;color:var(--ink);font-size:16px;box-shadow:0 2px 12px #d99ba622}
+.dots{letter-spacing:8px;color:var(--pink);height:16px}.btn{border:0;background:var(--pink);color:#fff;padding:12px 24px;border-radius:22px;font-weight:600;cursor:pointer;box-shadow:0 8px 20px #e96b8640}
+.flowers{width:100%;height:300px;object-fit:cover;object-position:center;border-radius:10px;margin:18px 0;box-shadow:0 14px 35px #a96b7725}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:18px 0}.tile{aspect-ratio:1;background:#f2c4ce;overflow:hidden;cursor:pointer;border-radius:3px}.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.letter{margin:18px 0;padding:24px 20px;background:#fffdf9;min-height:300px;box-shadow:0 8px 30px #b77b851c;line-height:1.8;font-family:"Playfair Display",serif}
+.playlist{display:grid;gap:10px;margin:16px 0}.track{padding:14px;border-radius:10px;color:#fff;display:flex;justify-content:space-between;align-items:center;font-size:13px}.track a{color:#fff;text-decoration:none;font-weight:600}
+.t1{background:#6d3c35}.t2{background:#343c49}.t3{background:#7a4650}.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:25px 0}.num{font-size:27px;color:#b54861;font-family:"Playfair Display",serif}.label{font-size:9px;text-transform:uppercase;opacity:.65;letter-spacing:1px}
+.back{margin-top:auto}.small{font-size:11px}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:#5b3e42;color:#fff;padding:10px 15px;border-radius:20px;font-size:12px;display:none}
+</style>
+</head>
+<body><div class="app"><main class="phone">
+
+<section class="page active center" id="p0">
+<div class="heart">♥</div><h1 class="title">Charumathi & Fahd</h1>
+<p class="sub">A tiny corner of the internet made just for us.</p>
+<div class="dots" id="dots">○ ○ ○ ○</div>
+<div class="pin">
+<button onclick="key('1')">1</button><button onclick="key('2')">2</button><button onclick="key('3')">3</button>
+<button onclick="key('4')">4</button><button onclick="key('5')">5</button><button onclick="key('6')">6</button>
+<button onclick="key('7')">7</button><button onclick="key('8')">8</button><button onclick="key('9')">9</button>
+<button onclick="key('0')" style="grid-column:2">0</button></div>
+<p class="tiny">hint: our special date ♡</p>
+</section>
+
+<section class="page center" id="p1">
+<p class="tiny">22 September 2026</p><h1>For Charumathi ♡</h1>
+<img class="flowers" src="flowers.jpg">
+<p class="sub">One photo, one date, and a whole lot of memories waiting to happen.</p>
+<button class="btn" onclick="go(2)">our little memory →</button>
+</section>
+
+<section class="page center" id="p2">
+<p class="tiny">a little picture puzzle ♡</p><h1 style="font-size:24px;margin:5px 0">Put us back together</h1>
+<p class="small">Tap two pieces to swap them.</p><div class="grid" id="puzzle"></div>
+<button class="btn" onclick="go(3)">show me the next part →</button>
+</section>
+
+<section class="page" id="p3">
+<p class="tiny">a letter for Charumathi</p>
+<div class="letter">
+<p>Dear Charumathi,</p>
+<p>Hi jaanu,</p>
+<p>I just wanted you to know that I love you so much and I just want this to remind u how much I miss you and how special and loved you make me feel and how ur presence and existence makes my life worth living.</p>
+<p>You're the best thing that's happened to me and I hope my heart always lies with you and yours with me.</p>
+<p>I love you.</p>
+<p>Always,<br>Fahd ♡</p>
+</div>
+<button class="btn" onclick="go(4)">our songs ♡</button>
+</section>
+
+<section class="page" id="p4">
+<p class="tiny">our little playlist ♡</p><h1 style="font-size:27px">Songs that feel like us</h1>
+<div class="playlist">
+<div class="track t1">Coffee — Miguel <a href="https://open.spotify.com/search/Coffee%20Miguel" target="_blank">Listen ↗</a></div>
+<div class="track t2">Reflections — The Neighbourhood <a href="https://open.spotify.com/search/Reflections%20The%20Neighbourhood" target="_blank">Listen ↗</a></div>
+<div class="track t3">Someone Else — Tory Lanez <a href="https://open.spotify.com/search/Someone%20Else%20Tory%20Lanez" target="_blank">Listen ↗</a></div>
+</div>
+<button class="btn back" onclick="go(5)">one last thing →</button>
+</section>
+
+<section class="page center" id="p5">
+<p class="tiny">every second with you ♡</p><h1>And the clock keeps counting</h1>
+<div class="counter">
+<div><div class="num" id="days">0</div><div class="label">days</div></div>
+<div><div class="num" id="hours">0</div><div class="label">hours</div></div>
+<div><div class="num" id="mins">0</div><div class="label">minutes</div></div>
+<div><div class="num" id="secs">0</div><div class="label">seconds</div></div>
+</div>
+<p class="sub">Since 22 September 2026, 12:00 AM — and counting.</p>
+<button class="btn" onclick="go(0)">↺ back to the beginning</button>
+</section>
+
+</main></div><div class="toast" id="toast"></div>
+<script>
+const SECRET="2209";let entered="";
+function key(k){entered+=k;document.getElementById("dots").textContent=entered.replace(/./g,"● ");
+if(entered.length===4){if(entered===SECRET){entered="";go(1)}else{show("not quite ♡");entered="";setTimeout(()=>document.getElementById("dots").textContent="○ ○ ○ ○",500)}}}
+function go(n){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("p"+n).classList.add("active");window.scrollTo(0,0)}
+function show(t){let e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",1400)}
+const imgs=Array.from({length:12},(_,i)=>`memory${i+1}.jpg`),order=[...Array(12).keys()];let selected=null;
+function renderPuzzle(){const el=document.getElementById("puzzle");el.innerHTML="";order.forEach((v,i)=>{let d=document.createElement("div");d.className="tile";let im=document.createElement("img");im.src=imgs[v];d.appendChild(im);d.onclick=()=>swap(i);el.appendChild(d)})}
+function swap(i){if(selected===null){selected=i;document.querySelectorAll(".tile")[i].style.outline="3px solid #e96b86"}else{[order[selected],order[i]]=[order[i],order[selected]];selected=null;renderPuzzle()}}renderPuzzle();
+const start=new Date("2026-09-22T00:00:00+05:30"),daysEl=document.getElementById("days"),hoursEl=document.getElementById("hours"),minsEl=document.getElementById("mins"),secsEl=document.getElementById("secs");
+function tick(){let s=Math.max(0,Math.floor((Date.now()-start)/1000));let d=Math.floor(s/86400);s%=86400;let h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60);s%=60;daysEl.textContent=d;hoursEl.textContent=h;minsEl.textContent=m;secsEl.textContent=s}tick();setInterval(tick,1000);
+</script></body></html>
